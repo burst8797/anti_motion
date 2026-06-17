@@ -110,18 +110,7 @@ The output path is a file when `--video_path` is a single video, and a folder wh
 | `--global_pgd_steps` | Additional cross-chunk PGD steps. Set to `0` to disable. |
 | `--no_transform` | Disable transform sampling. |
 
-## What Is Not Included
 
-The repository intentionally ignores:
-
-- base model weights
-- trained LoRA checkpoints
-- generated or protected videos
-- evaluation outputs
-- local datasets
-- caches and environment folders
-
-This keeps the GitHub release focused on code only.
 
 ## Acknowledgements
 
