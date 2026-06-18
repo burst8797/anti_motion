@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">AntiMotion</h1>
+  <h1 align="center">ChronoLock</h1>
   <p align="center">
     Adversarial video perturbation for disrupting MotionDirector Temporal LoRA training.
     <br>
@@ -27,6 +27,7 @@ The current release includes:
 - `AntiMotion/model_loader.py`: Diffusers/Transformers model loading helpers.
 - `AntiMotion/third_party/motiondirector/`: the minimal MotionDirector-compatible UNet and LoRA components required by the protection script.
 - `AntiMotion/assets/results/`: reserved space for README demos, qualitative comparisons, and generated previews.
+- `data/`: original input videos used by the README demos.
 
 ## Method
 
@@ -44,11 +45,11 @@ The objective combines a temporal denoising loss, an adversarial temporal differ
 
 ## Results and Video Demo
 
-| Case | Original video | Clean-training result | Protected-training result A | Protected-training result B |
-| --- | --- | --- | --- | --- |
-| `ikun` | [<img src="AntiMotion/assets/results/ikun/preview_original.gif" width="120" alt="ikun original video preview">](AntiMotion/assets/results/ikun/original.mp4) | [<img src="AntiMotion/assets/results/ikun/preview_clean_result.gif" width="120" alt="ikun clean-training result preview">](AntiMotion/assets/results/ikun/trained_on_clean.mp4) | [<img src="AntiMotion/assets/results/ikun/preview_protected_result_a.gif" width="120" alt="ikun protected-training result A preview">](AntiMotion/assets/results/ikun/trained_on_protected_1.mp4) | [<img src="AntiMotion/assets/results/ikun/preview_protected_result_b.gif" width="120" alt="ikun protected-training result B preview">](AntiMotion/assets/results/ikun/trained_on_protected_2.mp4) |
-| `project_12` | [<img src="AntiMotion/assets/results/project_12/preview_original.gif" width="120" alt="project 12 original video preview">](AntiMotion/assets/results/project_12/original.mp4) | [<img src="AntiMotion/assets/results/project_12/preview_clean_result.gif" width="120" alt="project 12 clean-training result preview">](AntiMotion/assets/results/project_12/trained_on_clean.mp4) | [<img src="AntiMotion/assets/results/project_12/preview_protected_result_a.gif" width="120" alt="project 12 protected-training result A preview">](AntiMotion/assets/results/project_12/trained_on_protected_1.mp4) | [<img src="AntiMotion/assets/results/project_12/preview_protected_result_b.gif" width="120" alt="project 12 protected-training result B preview">](AntiMotion/assets/results/project_12/trained_on_protected_2.mp4) |
-| `project_13` | [<img src="AntiMotion/assets/results/project_13/preview_original.gif" width="120" alt="project 13 original video preview">](AntiMotion/assets/results/project_13/original.mp4) | [<img src="AntiMotion/assets/results/project_13/preview_clean_result.gif" width="120" alt="project 13 clean-training result preview">](AntiMotion/assets/results/project_13/trained_on_clean.mp4) | [<img src="AntiMotion/assets/results/project_13/preview_protected_result_a.gif" width="120" alt="project 13 protected-training result A preview">](AntiMotion/assets/results/project_13/trained_on_protected_1.mp4) | [<img src="AntiMotion/assets/results/project_13/preview_protected_result_b.gif" width="120" alt="project 13 protected-training result B preview">](AntiMotion/assets/results/project_13/trained_on_protected_2.mp4) |
+| Original video | Clean-training result | Protected-training result A | Protected-training result B |
+| --- | --- | --- | --- |
+| [<img src="AntiMotion/assets/results/ikun/preview_original.gif" width="120" alt="ikun original video preview">](data/ikun.mp4) | [<img src="AntiMotion/assets/results/ikun/preview_clean_result.gif" width="120" alt="ikun clean-training result preview">](AntiMotion/assets/results/ikun/trained_on_clean.mp4) | [<img src="AntiMotion/assets/results/ikun/preview_protected_result_a.gif" width="120" alt="ikun protected-training result A preview">](AntiMotion/assets/results/ikun/trained_on_protected_1.mp4) | [<img src="AntiMotion/assets/results/ikun/preview_protected_result_b.gif" width="120" alt="ikun protected-training result B preview">](AntiMotion/assets/results/ikun/trained_on_protected_2.mp4) |
+| [<img src="AntiMotion/assets/results/project_12/preview_original.gif" width="120" alt="project 12 original video preview">](data/project_12.mp4) | [<img src="AntiMotion/assets/results/project_12/preview_clean_result.gif" width="120" alt="project 12 clean-training result preview">](AntiMotion/assets/results/project_12/trained_on_clean.mp4) | [<img src="AntiMotion/assets/results/project_12/preview_protected_result_a.gif" width="120" alt="project 12 protected-training result A preview">](AntiMotion/assets/results/project_12/trained_on_protected_1.mp4) | [<img src="AntiMotion/assets/results/project_12/preview_protected_result_b.gif" width="120" alt="project 12 protected-training result B preview">](AntiMotion/assets/results/project_12/trained_on_protected_2.mp4) |
+| [<img src="AntiMotion/assets/results/project_13/preview_original.gif" width="120" alt="project 13 original video preview">](data/project_13.mp4) | [<img src="AntiMotion/assets/results/project_13/preview_clean_result.gif" width="120" alt="project 13 clean-training result preview">](AntiMotion/assets/results/project_13/trained_on_clean.mp4) | [<img src="AntiMotion/assets/results/project_13/preview_protected_result_a.gif" width="120" alt="project 13 protected-training result A preview">](AntiMotion/assets/results/project_13/trained_on_protected_1.mp4) | [<img src="AntiMotion/assets/results/project_13/preview_protected_result_b.gif" width="120" alt="project 13 protected-training result B preview">](AntiMotion/assets/results/project_13/trained_on_protected_2.mp4) |
 
 Clean-training results are generated by MotionDirector models trained on clean videos. Protected-training results are generated by MotionDirector models trained on AntiMotion-protected videos.
 
@@ -56,6 +57,10 @@ Clean-training results are generated by MotionDirector models trained on clean v
 
 ```text
 anti_motion/
+|-- data/
+|   |-- ikun.mp4
+|   |-- project_12.mp4
+|   `-- project_13.mp4
 |-- README.md
 `-- AntiMotion/
     |-- .gitignore
