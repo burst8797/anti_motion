@@ -1,7 +1,7 @@
 <p align="center">
   <h1 align="center">ChronoLock</h1>
   <p align="center">
-  **ChronoLock**: Protecting Videos from Unauthorized Text-to-Video Personalization    <br>
+  ChronoLock: Protecting Videos from Unauthorized Text-to-Video Personalization    <br>
     <a href="#overview">Overview</a> |
     <a href="#results-and-video-demo">Demo</a> |
     <a href="#installation">Installation</a> |
