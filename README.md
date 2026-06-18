@@ -18,7 +18,7 @@
 
 ## Overview
 
-AntiMotion is a lightweight research codebase for generating protected videos before MotionDirector-style Temporal LoRA training. Given an input video and prompt, AntiMotion optimizes a bounded perturbation that targets temporal adaptation in text-to-video diffusion models while keeping the output in the original video format.
+ChronoLock is a implementation for generating protected videos before MotionDirector-style Temporal LoRA training. Given an input video and prompt, AntiMotion optimizes a bounded perturbation that targets temporal adaptation in text-to-video diffusion models while keeping the output in the original video format.
 
 The current release includes:
 
