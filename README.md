@@ -44,66 +44,38 @@ The objective combines a temporal denoising loss, an adversarial temporal differ
 
 ## Results and Video Demo
 
-This section is reserved for qualitative results. Follow the MotionDirector-style README pattern: keep small GIF previews in `assets/` and show them with an HTML table. GIF previews render reliably on GitHub; MP4 files can be kept beside them as higher-quality sources.
-
-### Demo Slots
-
-| Case | Original input | Protected input | MotionDirector on original | MotionDirector on protected |
-| --- | --- | --- | --- | --- |
-| `case_01` | `AntiMotion/assets/results/case_01/original.gif` | `AntiMotion/assets/results/case_01/protected.gif` | `AntiMotion/assets/results/case_01/md_original.gif` | `AntiMotion/assets/results/case_01/md_protected.gif` |
-
-After adding the GIF files above, replace the placeholder row with this block:
-
-```html
 <table>
   <tr>
-    <td align="center"><b>Original input</b></td>
-    <td align="center"><b>Protected input</b></td>
-    <td align="center"><b>MotionDirector on original</b></td>
-    <td align="center"><b>MotionDirector on protected</b></td>
+    <td align="center"><b>Case</b></td>
+    <td align="center"><b>Original video</b></td>
+    <td align="center"><b>Trained on clean video (ori)</b></td>
+    <td align="center"><b>Trained on protected video (pro 1)</b></td>
+    <td align="center"><b>Trained on protected video (pro 2)</b></td>
   </tr>
   <tr>
-    <td><img src="AntiMotion/assets/results/case_01/original.gif" width="220"></td>
-    <td><img src="AntiMotion/assets/results/case_01/protected.gif" width="220"></td>
-    <td><img src="AntiMotion/assets/results/case_01/md_original.gif" width="220"></td>
-    <td><img src="AntiMotion/assets/results/case_01/md_protected.gif" width="220"></td>
+    <td align="center"><code>ikun</code></td>
+    <td><video src="AntiMotion/assets/results/ikun/original.mp4" width="180" controls muted loop playsinline></video></td>
+    <td><video src="AntiMotion/assets/results/ikun/trained_on_clean.mp4" width="180" controls muted loop playsinline></video></td>
+    <td><video src="AntiMotion/assets/results/ikun/trained_on_protected_1.mp4" width="180" controls muted loop playsinline></video></td>
+    <td><video src="AntiMotion/assets/results/ikun/trained_on_protected_2.mp4" width="180" controls muted loop playsinline></video></td>
+  </tr>
+  <tr>
+    <td align="center"><code>project_12</code></td>
+    <td><video src="AntiMotion/assets/results/project_12/original.mp4" width="180" controls muted loop playsinline></video></td>
+    <td><video src="AntiMotion/assets/results/project_12/trained_on_clean.mp4" width="180" controls muted loop playsinline></video></td>
+    <td><video src="AntiMotion/assets/results/project_12/trained_on_protected_1.mp4" width="180" controls muted loop playsinline></video></td>
+    <td><video src="AntiMotion/assets/results/project_12/trained_on_protected_2.mp4" width="180" controls muted loop playsinline></video></td>
+  </tr>
+  <tr>
+    <td align="center"><code>project_13</code></td>
+    <td><video src="AntiMotion/assets/results/project_13/original.mp4" width="180" controls muted loop playsinline></video></td>
+    <td><video src="AntiMotion/assets/results/project_13/trained_on_clean.mp4" width="180" controls muted loop playsinline></video></td>
+    <td><video src="AntiMotion/assets/results/project_13/trained_on_protected_1.mp4" width="180" controls muted loop playsinline></video></td>
+    <td><video src="AntiMotion/assets/results/project_13/trained_on_protected_2.mp4" width="180" controls muted loop playsinline></video></td>
   </tr>
 </table>
-```
 
-Recommended demo file layout:
-
-```text
-AntiMotion/
-`-- assets/
-    `-- results/
-        `-- case_01/
-            |-- original.mp4
-            |-- protected.mp4
-            |-- md_original.mp4
-            |-- md_protected.mp4
-            |-- original.gif
-            |-- protected.gif
-            |-- md_original.gif
-            `-- md_protected.gif
-```
-
-Recommended preview format:
-
-- Use `.gif` for README inline previews.
-- Keep each GIF at 320-480 px width and 8-12 fps when possible.
-- Keep each README GIF small enough for GitHub to load quickly, preferably under 10 MB.
-- Keep optional `.mp4` sources encoded as H.264/AVC with `yuv420p` pixel format.
-
-Example conversion with `ffmpeg`:
-
-```bash
-ffmpeg -i AntiMotion/assets/results/case_01/original.mp4 \
-  -vf "fps=8,scale=360:-1:flags=lanczos" \
-  -loop 0 AntiMotion/assets/results/case_01/original.gif
-```
-
-Run the same conversion for `protected.mp4`, `md_original.mp4`, and `md_protected.mp4`.
+`trained_on_clean` denotes MotionDirector output trained on clean videos, while `trained_on_protected` denotes output trained on protected videos.
 
 ## Project Structure
 
@@ -118,8 +90,9 @@ anti_motion/
     |-- LICENSE
     |-- assets/
     |   `-- results/
-    |       `-- case_01/
-    |           `-- .gitkeep
+    |       |-- ikun/
+    |       |-- project_12/
+    |       `-- project_13/
     `-- third_party/
         `-- motiondirector/
             |-- models/
