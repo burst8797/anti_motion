@@ -23,11 +23,11 @@ AntiMotion is a lightweight research codebase for generating protected videos be
 
 The current release includes:
 
-- `AntiMotion/anti_motion.py`: two-stage PGD protection for a single `.mp4` video.
-- `AntiMotion/model_loader.py`: Diffusers/Transformers model loading helpers.
-- `AntiMotion/third_party/motiondirector/`: the minimal MotionDirector-compatible UNet and LoRA components required by the protection script.
-- `AntiMotion/assets/results/`: reserved space for README demos, qualitative comparisons, and generated previews.
-- `AntiMotion/data/`: original input videos used by the README demos.
+- `ChronoLock/anti_motion.py`: two-stage PGD protection for a single `.mp4` video.
+- `ChronoLock/model_loader.py`: Diffusers/Transformers model loading helpers.
+- `ChronoLock/third_party/motiondirector/`: the minimal MotionDirector-compatible UNet and LoRA components required by the protection script.
+- `ChronoLock/assets/results/`: reserved space for README demos, qualitative comparisons, and generated previews.
+- `ChronoLock/data/`: original input videos used by the README demos.
 
 ## Method
 
@@ -41,15 +41,15 @@ Input video
   -> protected video
 ```
 
-The objective combines a temporal denoising loss, an adversarial temporal difference branch, optional MetaCloak-style transform sampling, and a cross-chunk boundary term. The implementation is intentionally compact so experiments can be reproduced and modified directly from `AntiMotion/anti_motion.py`.
+The objective combines a temporal denoising loss, an adversarial temporal difference branch, optional MetaCloak-style transform sampling, and a cross-chunk boundary term. The implementation is intentionally compact so experiments can be reproduced and modified directly from `ChronoLock/anti_motion.py`.
 
 ## Results and Video Demo
 
 | Original video | Clean-training result | Protected-training result A | Protected-training result B |
 | --- | --- | --- | --- |
-| [<img src="AntiMotion/assets/results/ikun/preview_original.gif" width="120" alt="ikun original video preview">](AntiMotion/data/ikun.mp4) | [<img src="AntiMotion/assets/results/ikun/preview_clean_result.gif" width="120" alt="ikun clean-training result preview">](AntiMotion/assets/results/ikun/trained_on_clean.mp4) | [<img src="AntiMotion/assets/results/ikun/preview_protected_result_a.gif" width="120" alt="ikun protected-training result A preview">](AntiMotion/assets/results/ikun/trained_on_protected_1.mp4) | [<img src="AntiMotion/assets/results/ikun/preview_protected_result_b.gif" width="120" alt="ikun protected-training result B preview">](AntiMotion/assets/results/ikun/trained_on_protected_2.mp4) |
-| [<img src="AntiMotion/assets/results/project_12/preview_original.gif" width="120" alt="project 12 original video preview">](AntiMotion/data/project_12.mp4) | [<img src="AntiMotion/assets/results/project_12/preview_clean_result.gif" width="120" alt="project 12 clean-training result preview">](AntiMotion/assets/results/project_12/trained_on_clean.mp4) | [<img src="AntiMotion/assets/results/project_12/preview_protected_result_a.gif" width="120" alt="project 12 protected-training result A preview">](AntiMotion/assets/results/project_12/trained_on_protected_1.mp4) | [<img src="AntiMotion/assets/results/project_12/preview_protected_result_b.gif" width="120" alt="project 12 protected-training result B preview">](AntiMotion/assets/results/project_12/trained_on_protected_2.mp4) |
-| [<img src="AntiMotion/assets/results/project_13/preview_original.gif" width="120" alt="project 13 original video preview">](AntiMotion/data/project_13.mp4) | [<img src="AntiMotion/assets/results/project_13/preview_clean_result.gif" width="120" alt="project 13 clean-training result preview">](AntiMotion/assets/results/project_13/trained_on_clean.mp4) | [<img src="AntiMotion/assets/results/project_13/preview_protected_result_a.gif" width="120" alt="project 13 protected-training result A preview">](AntiMotion/assets/results/project_13/trained_on_protected_1.mp4) | [<img src="AntiMotion/assets/results/project_13/preview_protected_result_b.gif" width="120" alt="project 13 protected-training result B preview">](AntiMotion/assets/results/project_13/trained_on_protected_2.mp4) |
+| [<img src="ChronoLock/assets/results/ikun/preview_original.gif" width="120" alt="ikun original video preview">](ChronoLock/data/ikun.mp4) | [<img src="ChronoLock/assets/results/ikun/preview_clean_result.gif" width="120" alt="ikun clean-training result preview">](ChronoLock/assets/results/ikun/trained_on_clean.mp4) | [<img src="ChronoLock/assets/results/ikun/preview_protected_result_a.gif" width="120" alt="ikun protected-training result A preview">](ChronoLock/assets/results/ikun/trained_on_protected_1.mp4) | [<img src="ChronoLock/assets/results/ikun/preview_protected_result_b.gif" width="120" alt="ikun protected-training result B preview">](ChronoLock/assets/results/ikun/trained_on_protected_2.mp4) |
+| [<img src="ChronoLock/assets/results/project_12/preview_original.gif" width="120" alt="project 12 original video preview">](ChronoLock/data/project_12.mp4) | [<img src="ChronoLock/assets/results/project_12/preview_clean_result.gif" width="120" alt="project 12 clean-training result preview">](ChronoLock/assets/results/project_12/trained_on_clean.mp4) | [<img src="ChronoLock/assets/results/project_12/preview_protected_result_a.gif" width="120" alt="project 12 protected-training result A preview">](ChronoLock/assets/results/project_12/trained_on_protected_1.mp4) | [<img src="ChronoLock/assets/results/project_12/preview_protected_result_b.gif" width="120" alt="project 12 protected-training result B preview">](ChronoLock/assets/results/project_12/trained_on_protected_2.mp4) |
+| [<img src="ChronoLock/assets/results/project_13/preview_original.gif" width="120" alt="project 13 original video preview">](ChronoLock/data/project_13.mp4) | [<img src="ChronoLock/assets/results/project_13/preview_clean_result.gif" width="120" alt="project 13 clean-training result preview">](ChronoLock/assets/results/project_13/trained_on_clean.mp4) | [<img src="ChronoLock/assets/results/project_13/preview_protected_result_a.gif" width="120" alt="project 13 protected-training result A preview">](ChronoLock/assets/results/project_13/trained_on_protected_1.mp4) | [<img src="ChronoLock/assets/results/project_13/preview_protected_result_b.gif" width="120" alt="project 13 protected-training result B preview">](ChronoLock/assets/results/project_13/trained_on_protected_2.mp4) |
 
 Clean-training results are generated by MotionDirector models trained on clean videos. Protected-training results are generated by MotionDirector models trained on AntiMotion-protected videos.
 
@@ -58,7 +58,7 @@ Clean-training results are generated by MotionDirector models trained on clean v
 ```text
 ChronoLock/
 |-- README.md
-`-- AntiMotion/
+`-- ChronoLock/
     |-- .gitignore
     |-- anti_motion.py
     |-- data/
@@ -194,8 +194,8 @@ Generated videos, base model weights, checkpoints, and experiment logs should st
 
 ## Acknowledgements
 
-This repository includes minimal MotionDirector-compatible components under `AntiMotion/third_party/motiondirector/`. Please follow the upstream licenses for MotionDirector, Diffusers, Transformers, ModelScope, and any base model weights used in your experiments.
+This repository includes minimal MotionDirector-compatible components under `ChronoLock/third_party/motiondirector/`. Please follow the upstream licenses for MotionDirector, Diffusers, Transformers, ModelScope, and any base model weights used in your experiments.
 
 ## License
 
-This project is released under the Apache-2.0 license. See [LICENSE](AntiMotion/LICENSE) for details.
+This project is released under the Apache-2.0 license. See [LICENSE](ChronoLock/LICENSE) for details.
